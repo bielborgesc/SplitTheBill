@@ -5,4 +5,7 @@
     <string name="name">Name</string>
     <string name="produtos_comprados">Produtos comprados</string>
     <string name="salvar">Salvar</string>
+    <string name="add_member">Add member</string>
+    <string name="remove_member">Remove member</string>
+    <string name="edit_member">Edit member</string>
 </resources>

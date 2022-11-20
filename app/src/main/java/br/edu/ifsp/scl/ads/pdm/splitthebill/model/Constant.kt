@@ -1,6 +1,6 @@
 package br.edu.ifsp.scl.ads.pdm.splitthebill.model
 
 object Constant {
-    const val EXTRA_CONTACT = "EXTRA_CONTACT"
-    const val VIEW_CONTACT = "VIEW_CONTACT"
+    const val EXTRA_MEMBER = "EXTRA_MEMBER"
+    const val VIEW_MEMBER = "VIEW_MEMBER"
 }
