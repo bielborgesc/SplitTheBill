@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(amb.root)
 
-        fillMemberList()
 
         memberAdapter = MemberAdapter(this, memberList)
         amb.membersLv.adapter = memberAdapter
@@ -108,19 +107,6 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> { false }
-        }
-    }
-
-    private fun fillMemberList() {
-        for (i in 1..10) {
-            memberList.add(
-                Member(
-                    id = i,
-                    name = "Nome $i",
-                    valuePaid = 10.20,
-                    description = "Ovo, Batata, Carne"
-                )
-            )
         }
     }
 

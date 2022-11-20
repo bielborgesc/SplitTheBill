@@ -15,8 +15,16 @@ class MemberAdapter(
 ) : ArrayAdapter<Member>(context, R.layout.tile_member, memberList) {
     private data class TileMemberHolder(val nameTv: TextView, val finalValueTv: TextView)
 
+    fun calculateValuePerMember(): Double {
+        var valuePerMember = 0.0
+        for (member in memberList) {
+            valuePerMember += member.valuePaid
+        }
+        return (valuePerMember/memberList.size)
+    }
+
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-        val contact = memberList[position]
+        val member = memberList[position]
         var memberTileView = convertView
         if (memberTileView == null) {
             memberTileView =
@@ -32,8 +40,11 @@ class MemberAdapter(
         }
 
         with(memberTileView?.tag as TileMemberHolder) {
-            nameTv.text = contact.name
-            finalValueTv.text = contact.valuePaid.toString()
+            val valuePerMember = calculateValuePerMember()
+            val result = (member.valuePaid - valuePerMember)
+            if(result >= 0) finalValueTv.text = String.format("Você precisa receber: R$ %.2f", result)
+            else finalValueTv.text = String.format("Você precisa pagar: R$ %.2f", (result*(-1)))
+            nameTv.text = member.name
         }
 
         return memberTileView
