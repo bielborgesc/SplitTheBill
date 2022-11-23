@@ -100,9 +100,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.editMemberMi -> {
                 val member = memberList[position]
-                val contactIntent = Intent(this, MemberActivity::class.java)
-                contactIntent.putExtra(EXTRA_MEMBER, member)
-                contactIntent.putExtra(VIEW_MEMBER, false)
+                val memberIntent = Intent(this, MemberActivity::class.java)
+                memberIntent.putExtra(EXTRA_MEMBER, member)
+                memberIntent.putExtra(VIEW_MEMBER, false)
                 carl.launch(contactIntent)
                 true
             }
